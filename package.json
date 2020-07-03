@@ -18,8 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "drop-db:local": "psql -U rm -d postgres -p 5432 -f sql/drop_create_db.sql",
-    "import-db:excel": "node -e 'require(\"./src/util/excel.ts\").importExcelData()'"
+    "db:drop-local": "psql -U rm -d postgres -p 5432 -f sql/drop_create_db.sql",
+    "db:import-excel": "node -e 'require(\"./src/util/excel.ts\").importExcelData()'"
   },
   "dependencies": {
     "@nestjs/common": "^6.10.14",
