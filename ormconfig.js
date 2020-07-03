@@ -1,4 +1,5 @@
 const parse = require('pg-connection-string').parse
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const env = require('dotenv')
 env.config()
 
