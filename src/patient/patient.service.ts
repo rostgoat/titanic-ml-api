@@ -14,6 +14,8 @@ export class PatientService {
    * Return all patients
    */
   async findAll(): Promise<Patient[]> {
-    return await this.patientRepository.find()
+    return await this.patientRepository.find({
+      select: ["age", "province", "infection_case", "infection_type", "gender", "patient_state"]
+    })
   }
 }
