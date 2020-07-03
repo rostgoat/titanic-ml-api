@@ -1,5 +1,4 @@
 import { IsNotEmpty } from 'class-validator'
-import { PatientGender } from './patient.entity'
 
 /**
  * General Patient data transfer object
@@ -15,5 +14,5 @@ export class PatientDTO {
   @IsNotEmpty()
   infection_type: string
   @IsNotEmpty()
-  gender: PatientGender
+  gender: string
 }

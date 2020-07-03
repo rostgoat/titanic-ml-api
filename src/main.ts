@@ -20,5 +20,6 @@ async function bootstrap() {
 
   if (process.env.NODE_ENV !== 'production')
     Logger.log(`Server running on http://localhost:${port}`, 'Bootstrap')
+
 }
 bootstrap()

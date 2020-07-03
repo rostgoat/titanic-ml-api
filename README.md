@@ -24,15 +24,21 @@ root - postgres password
 ## Installation
 
 ```bash
-$ npm install
-$ npm run drop-db:local
+$ yarn
+$ yarn db:drop-local
 ```
 
 ## Running the app
 
 
 ```bash
-$ npm run start:dev
+$ yarn start:dev
+```
+
+The above script will start the app and initialize the database models. After it runs, execute the following to add data into the database:
+
+```bash
+$ yarn db:import-excel
 ```
 
 ## Data Source
