@@ -1,6 +1,6 @@
 ## Description
 
-This API contains patient data about COVID19 cases in Korea. The data was parsed from an excel file into the database from which it can be retreived using GET methods.
+This API contains data about Titanic passengers. The data was parsed from an excel file into the database from which it can be retreived using GET methods.
 
 ## Env
 
@@ -11,7 +11,7 @@ To get things working locally, in project root, create `.env` and add the follow
 PORT=3000
 
 # db local
-DATABASE_URL=postgres://rm:root@localhost:5432/covid19
+DATABASE_URL=postgres://rm:root@localhost:5432/titanic
 ```
 
 **Note:** replace the variables below with your PostgreSQL user variables OR create the following in your PostgreSQL locally: 
@@ -43,7 +43,13 @@ $ yarn db:import-excel
 
 ## Data Source
 
-[Kaggle](https://www.kaggle.com/kimjihoo/coronavirusdataset/data?select=PatientInfo.csv)
+[Kaggle](https://www.kaggle.com/c/titanic/overview)
+
+## Notes
+
+- `titanic.py` parses the `titanic.csv` file from Kaggle and modifies all values to be number types.
+- I ran `titanic.py` which exported a filed called `titanic_modified.csv` which is the file that the excel utility function imports.
+- NaN age columns were provided the average of all ages in the dataset.
 
 ## License
 
