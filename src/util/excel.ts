@@ -3,7 +3,7 @@ const fastcsv = require('fast-csv')
 const Pool = require('pg').Pool
 
 module.exports.importExcelData = () => {
-  const path = './covid_data.csv'
+  const path = './titanic_modified.csv'
   const stream = fs.createReadStream(path)
   const csvData = []
   const csvStream = fastcsv
@@ -19,13 +19,13 @@ module.exports.importExcelData = () => {
       const pool = new Pool({
         host: 'localhost',
         user: 'rm',
-        database: 'covid19',
+        database: 'titanic',
         password: 'root',
         port: 5432,
       })
 
       const query =
-        'INSERT INTO patients (patient_id, gender, age, province, infection_case, patient_state, infection_type) VALUES ($1, $2, $3, $4, $5, $6, $7)'
+        'INSERT INTO passengers (passenger_id, survived, passenger_class, age, fare, female, male) VALUES ($1, $2, $3, $4, $5, $6, $7)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
