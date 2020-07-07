@@ -6,6 +6,8 @@ import { IsNotEmpty } from 'class-validator'
 export class PassengerDTO {
   passenger_id: number
   @IsNotEmpty()
+  survived: number
+  @IsNotEmpty()
   age: number
   @IsNotEmpty()
   fare: number

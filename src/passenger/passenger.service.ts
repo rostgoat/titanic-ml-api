@@ -15,7 +15,7 @@ export class PassengerService {
    */
   async findAll(): Promise<Passenger[]> {
     return await this.passengerRepository.find({
-      select: ["passenger_class", "age", "fare", "female", "male"]
+      select: ["passenger_class", "survived", "age", "fare", "female", "male"]
     })
   }
 }

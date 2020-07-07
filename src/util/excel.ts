@@ -25,7 +25,7 @@ module.exports.importExcelData = () => {
       })
 
       const query =
-        'INSERT INTO passengers (passenger_id, passenger_class, age, fare, female, male) VALUES ($1, $2, $3, $4, $5, $6)'
+        'INSERT INTO passengers (passenger_id, survived, passenger_class, age, fare, female, male) VALUES ($1, $2, $3, $4, $5, $6, $7)'
 
       pool.connect((err, client, done) => {
         if (err) throw err
